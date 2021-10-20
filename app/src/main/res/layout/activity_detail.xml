@@ -6,55 +6,60 @@
     android:layout_height="match_parent"
     tools:context=".DetailActivity">
 
-    <ImageView
-        android:id="@+id/iv_image"
-        android:layout_width="130dp"
-        android:layout_height="114dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="112dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="108dp"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_desc"
-        app:layout_constraintEnd_toStartOf="@+id/tv_desc"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tv_name"
-        tools:srcCompat="@tools:sample/avatars" />
-
     <TextView
         android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="43dp"
         android:text="Food Name"
         android:textSize="34sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/tv_price"
+        app:layout_constraintBottom_toTopOf="@+id/tv_desc"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/iv_image"
+        android:layout_width="133dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="43dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="14dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_price"
+        app:layout_constraintEnd_toStartOf="@+id/tv_desc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name"
+        app:layout_constraintVertical_bias="0.0"
+        tools:srcCompat="@tools:sample/avatars" />
+
     <TextView
         android:id="@+id/tv_price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="17dp"
-        android:text="Rp20.000"
-        android:textSize="16sp"
+        android:layout_width="138dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Harga: Rp20.000"
+        android:textSize="15sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/tv_desc"
-        app:layout_constraintStart_toStartOf="@+id/tv_desc"
-        app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+        app:layout_constraintEnd_toStartOf="@+id/tv_desc"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_image" />
 
     <TextView
         android:id="@+id/tv_desc"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="18dp"
-        android:layout_marginBottom="371dp"
-        android:text="Pindang serani adalah makanan khas dari Jepara berupa semacam sup ikan laut. Rasa pindang serani merupakan perpaduan rasa pedas, asem dan manis yang umumnya disajikan pada siang hari. Sajian ikan pindang bening dengan ikan laut ini terasa ringan dan segar. Pindang serani ini berbeda dengan sajian pindang ikan Betawi."
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:justificationMode="inter_word"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis feugiat nec justo vitae sagittis. Suspendisse porttitor placerat metus vel posuere. In fringilla venenatis lacus sit amet rutrum. Sed mollis arcu vel libero finibus pulvinar. Curabitur mollis lacus nec tellus imperdiet eleifend."
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/iv_image"
-        app:layout_constraintTop_toBottomOf="@+id/tv_price" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_name" />
 </android.support.constraint.ConstraintLayout>

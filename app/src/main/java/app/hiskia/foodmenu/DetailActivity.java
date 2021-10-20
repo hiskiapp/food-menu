@@ -1,7 +1,10 @@
 package app.hiskia.foodmenu;
 
+import android.app.ActionBar;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,19 +20,25 @@ public class DetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-
-        ivImage = findViewById(R.id.iv_image);
-        tvName = findViewById(R.id.tv_name);
-        tvPrice = findViewById(R.id.tv_price);
-        tvDesc = findViewById(R.id.tv_desc);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setTitle("Detail Makanan: ");
 
         image = getIntent().getStringExtra("image");
-        Glide.with(this).load(image).diskCacheStrategy(DiskCacheStrategy.ALL).into(ivImage);
         name = getIntent().getStringExtra("name");
-        tvName.setText(name);
         price = getIntent().getStringExtra("price");
-        tvPrice.setText(price);
         desc = getIntent().getStringExtra("desc");
-        tvDesc.setText(desc);
+
+        setTitle("Detail Makanan: "+name);
+        ivImage = findViewById(R.id.iv_image);
+        Glide.with(this).load(image).diskCacheStrategy(DiskCacheStrategy.ALL).into(ivImage);
+        tvName = findViewById(R.id.tv_name); tvName.setText(name);
+        tvPrice = findViewById(R.id.tv_price); tvPrice.setText("Harga: " + price);
+        tvDesc = findViewById(R.id.tv_desc); tvDesc.setText(desc);
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item){
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivityForResult(intent, 0);
+        return true;
     }
 }
