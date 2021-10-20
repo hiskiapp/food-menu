@@ -2,16 +2,25 @@ package app.hiskia.foodmenu;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    private RecyclerView rvFood;
     private ArrayList<Food> foods;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        rvFood = findViewById(R.id.rv_food);
+        initData();
+
+        rvFood.setAdapter(new FoodAdapter(foods, this));
+        rvFood.setLayoutManager(new LinearLayoutManager(this));
     }
 
     private void initData() {

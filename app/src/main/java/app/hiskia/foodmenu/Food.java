@@ -1,5 +1,7 @@
 package app.hiskia.foodmenu;
 
+import java.text.NumberFormat;
+
 public class Food {
     private String name, desc, image;
     private Integer price;
@@ -35,7 +37,10 @@ public class Food {
         this.image = image;
     }
 
-    public Integer getPrice() {
+    public String getPrice() {
+        NumberFormat formatter = NumberFormat.getCurrencyInstance();
+        String price = formatter.format(this.price);
+
         return price;
     }
 
